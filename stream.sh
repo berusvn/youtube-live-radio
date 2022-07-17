@@ -5,7 +5,7 @@ set -e
 while true
 do
   ffmpeg -loglevel info -y -re \
-    -f image2 -loop 1 -i bkg.gif \
+    -loop 1 -i bkg.gif \
     -i "https://berus-lofi.run.goorm.io/stream" \
     -vf "scale=iw*sar:ih,setsar=1,pad='max(iw+mod(iw,2),2*trunc(ih*16/9/2))':'max(ih+mod(ih,2),2*trunc(iw*9/16/2))':-1:-1, drawtext=fontfile=font.ttf:fontsize=40:fontcolor=white:shadowcolor=black:textfile=livetext.txt:reload=1:y=(main_h-60):x=(w-tw)/2, format=yuv420p" \
     -vcodec libx264 -preset veryfast -b:v 3000k -maxrate 3000k -bufsize 6000k \
