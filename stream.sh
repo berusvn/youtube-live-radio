@@ -11,5 +11,5 @@ do
     -c:v libx264 -preset veryfast -b:v 3000k -maxrate 3000k -bufsize 6000k \
     -framerate 25 -video_size 1920x1080 -g 50 -shortest -strict experimental \
     -c:a aac -b:a 128k -ar 44100 \
-    -f flv rtmp://b.rtmp.youtube.com/live2?backup=1/2x25-2wcj-f5c3-5jpz-14u5
+    -f flv rtmps://live-api-s.facebook.com:443/rtmp/FB-629054364297784-0-AbxB8t9OZV96q5kq
 done
